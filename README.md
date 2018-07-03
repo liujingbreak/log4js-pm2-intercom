@@ -13,12 +13,12 @@ Refer to log4js API doc https://log4js-node.github.io/log4js-node/api.html, rega
 - #### Not supporting multiple applications in single PM2 box
 	If you have 2 applications with difference names, and both in cluster mode, all your log will goes to first process of first application's log appender.
 
-## 1. Start log4js-pm2-intercom
+## 1. Start lj-log4js-pm2intercom
 Run this package as a normal PM2 application at first place,
 > It must be the first application to be started in PM2 (fork mode)
 
 ```bash
-npm i log4js-pm2-intercom
+npm i lj-log4js-pm2intercom
 pm2 start node_modules/.bin/log4js-pm2 --name log4js-intercom
 ```
 Or you can:
@@ -35,8 +35,8 @@ In your application source where you configure log4js, add following code:
 const pm2InstanceId = process.env.NODE_APP_INSTANCE;
 // Only log4js master process need to handle all log appenders
 if (pm2InstanceId === '0') {
-	// Tell log4js-pm2-intercom: I am the log4js master process
-	// log4js-pm2-intercom will need to know my process id and application name
+	// Tell lj-log4js-pm2intercom: I am the log4js master process
+	// lj-log4js-pm2intercom will need to know my process id and application name
 	process.send({topic: 'log4js:master'});
 }
 ```
