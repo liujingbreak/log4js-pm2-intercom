@@ -4,14 +4,14 @@ Refer to log4js API doc https://log4js-node.github.io/log4js-node/api.html, rega
 
 ### Problems of pm2-intercom and log4js:
 
-- #### Duplicate log messages
+- Duplicate log messages
 	PM2 v2.10.4 somehow runs multiple instances of pm2-intercom for cluster mode.
-	> While you start with `pm2 install pm2-intercom` then start your application in cluster mode, it runs multiple instances which leads to duplicate 
+	> While you start with `pm2 install pm2-intercom` then start your application in cluster mode, it runs multiple instances which leads to duplicate log messages.
 
 	I am guessing it is PM2 module system's fault, so I write this simple version which is not supposed to be run as `pm2 install` module anymore.
 
-- #### Not supporting multiple applications in single PM2 box
-	If you have 2 applications with difference names, and both in cluster mode, all your log will goes to first process of first application's log appender.
+- Not supporting multiple applications in single PM2 box
+	If you have 2 applications with difference names, and both in cluster mode, all of your log will go to first cluster instance/process of your first application's log appender.
 
 ## 1. Start lj-log4js-pm2intercom
 Run this package as a normal PM2 application at first place,
