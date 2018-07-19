@@ -1,6 +1,6 @@
 {
 	"name": "lj-log4js-pm2intercom",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "pm2-intercom is problematic with PM2 2.x, this is a mimic version to temporarily resolve some problem in our own project",
 	"main": "dist/index.js",
 	"bin": {
@@ -19,11 +19,13 @@
 	  "tsc": "tsc -w"
 	},
 	"dependencies" : {
-	  "pm2": "^2.10.4",
 		"lodash": "^4.17.10",
 		"@types/lodash": "^4.14.110",
 		"pify": "^3.0.0",
 		"@types/pify": "~3.0.2"
+	},
+	"peerDependencies": {
+		"pm2": "*"
 	},
 	"keywords": [
 	  "pubsub",
