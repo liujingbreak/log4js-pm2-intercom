@@ -1,3 +1,4 @@
-# 1.1.0
+# 1.1.2
 
-Move Pm2 to peer dependency list to avoid conflict with the global installed pm2
+Remove Pm2 from dependency or peer dependency list to avoid conflict with the global installed pm2
+
