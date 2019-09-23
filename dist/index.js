@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const pm2 = require("pm2");
 const _ = require("lodash");
-const pify = require("pify");
-const connect = pify(pm2.connect.bind(pm2));
-const list = pify(pm2.list.bind(pm2));
-const launchBus = pify(pm2.launchBus.bind(pm2));
+const util_1 = require("util");
+const connect = util_1.promisify(pm2.connect);
+const list = util_1.promisify(pm2.list);
+const launchBus = util_1.promisify(pm2.launchBus);
 function start() {
     return __awaiter(this, void 0, void 0, function* () {
         console.log('start pm2-intercom');

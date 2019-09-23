@@ -1,10 +1,10 @@
 import * as pm2 from 'pm2';
 import * as _ from 'lodash';
-import pify = require('pify');
+import {promisify as pify} from 'util';
 
-const connect = pify(pm2.connect.bind(pm2));
-const list = pify(pm2.list.bind(pm2));
-const launchBus = pify(pm2.launchBus.bind(pm2));
+const connect = pify(pm2.connect);
+const list = pify(pm2.list);
+const launchBus = pify(pm2.launchBus);
 
 export async function start() {
 	console.log('start pm2-intercom');
