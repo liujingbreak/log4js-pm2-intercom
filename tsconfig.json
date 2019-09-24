@@ -6,6 +6,7 @@
 		"target":"es2016",
 		"noImplicitAny": true,
 		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
 		"sourceMap": true,
 		"skipLibCheck": false,
 		"experimentalDecorators": true,

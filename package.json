@@ -31,7 +31,8 @@
 	],
 	"devDependencies": {
 		"typescript": "2.9.2",
-		"@types/node": "^10.5.1"
+		"@types/node": "^10.5.1",
+		"pm2": "^3.5.1"
 	},
 	"peerDependencies": {
 		"pm2": "*"

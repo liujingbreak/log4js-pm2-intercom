@@ -8,12 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const pm2 = require("pm2");
+const pm2_1 = require("pm2");
 const _ = require("lodash");
 const util_1 = require("util");
-const connect = util_1.promisify(pm2.connect);
-const list = util_1.promisify(pm2.list);
-const launchBus = util_1.promisify(pm2.launchBus);
+const connect = util_1.promisify(pm2_1.default.connect.bind(pm2_1.default));
+const list = util_1.promisify(pm2_1.default.list.bind(pm2_1.default));
+const launchBus = util_1.promisify(pm2_1.default.launchBus.bind(pm2_1.default));
 function start() {
     return __awaiter(this, void 0, void 0, function* () {
         console.log('start pm2-intercom');
@@ -34,7 +34,7 @@ function start() {
                 return;
             let masterProcId = targets.get(name);
             if (masterProcId)
-                pm2.sendDataToProcessId(masterProcId, packet.raw, () => { });
+                pm2_1.default.sendDataToProcessId(masterProcId, packet.raw, () => { });
         });
     });
 }
